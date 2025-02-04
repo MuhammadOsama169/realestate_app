@@ -7,7 +7,7 @@ import {
   FlatList,
 } from "react-native";
 import React from "react";
-import { Link } from "expo-router";
+import { Link, router } from "expo-router";
 import { SafeAreaView } from "react-native-safe-area-context";
 import icons from "@/constants/icons";
 import images from "@/constants/images";
@@ -17,6 +17,9 @@ import Filters from "@/components/global/Filters";
 import { featuredData, recommendedData } from "@/assets/data/properties";
 
 export default function index() {
+  const handleCardPress = (id: string) => {
+    router.push(`/properties/${id}`);
+  };
   return (
     <SafeAreaView className="bg-white h-full px-4">
       <FlatList
@@ -64,7 +67,7 @@ export default function index() {
               renderItem={({ item }) => (
                 <FeaturedCard
                   item={item}
-                  // onPress={() => handleCardPress(item.id)}
+                  onPress={() => handleCardPress(item.id)}
                 />
               )}
               keyExtractor={(item) => item.id}

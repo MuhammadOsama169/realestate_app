@@ -19,7 +19,7 @@ const SearchComponent = () => {
     debouncedSearch(text);
   };
   return (
-    <View className="m-5 px-4 z-50 rounded-lg flex flex-row items-center  justify-between  bg-accent-100 border border-primary-100 ">
+    <View className="my-5 px-4 z-50 rounded-lg flex flex-row items-center  justify-between  bg-accent-100 border border-primary-100 ">
       <TextInput
         value={search}
         onChangeText={handleSearch}
